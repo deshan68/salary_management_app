@@ -2,7 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { COLORS, FONTSIZE } from "../constant";
 import { useFonts } from "expo-font";
-import { BudgetCard, IncomeSpendingBtn } from "../components";
+import { BudgetCard, IncomeSpendingBtn, SavingCard } from "../components";
 
 const Home = () => {
   const [fontsLoaded] = useFonts({
@@ -63,6 +63,35 @@ const Home = () => {
           />
         </View>
       </View>
+      {/* -------- Saving section------- */}
+      <View style={styles.savingCardSection}>
+        <View style={styles.sectionTitle}>
+          <Text
+            style={{
+              fontFamily: "NunitoSans-Bold",
+              fontSize: FONTSIZE.meduim,
+              color: COLORS.black,
+            }}
+          >
+            Savings
+          </Text>
+          <Text
+            style={{
+              fontFamily: "NunitoSans-Regular",
+              fontSize: FONTSIZE.small,
+              color: COLORS.primary,
+            }}
+          >
+            See All
+          </Text>
+        </View>
+        <View style={styles.sectoionCardContainer}>
+          <SavingCard />
+          <SavingCard />
+          <SavingCard />
+          <SavingCard />
+        </View>
+      </View>
     </View>
   );
 };
@@ -72,6 +101,7 @@ export default Home;
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 10,
+    width: "100%",
   },
   budgetSection: {
     height: 360,
@@ -91,5 +121,21 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 5,
+  },
+  savingCardSection: {
+    width: "100%",
+    marginTop: 15,
+  },
+  sectionTitle: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "flex-end",
+    marginBottom: 10,
+  },
+  sectoionCardContainer: {
+    width: "100%",
+    flexWrap: "wrap",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });
