@@ -1,12 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 import { COLORS, FONTSIZE } from "../constant";
 
 const SavingCard = ({ item }) => {
-  console.log(item.Completed);
   return (
-    <View style={styles.Container}>
+    <TouchableOpacity style={styles.Container}>
       <View style={styles.goalNameWithIcon}>
         <Text
           style={{
@@ -33,7 +32,7 @@ const SavingCard = ({ item }) => {
           style={[styles.CompletedIndicator, { width: item.Completed }]}
         ></View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

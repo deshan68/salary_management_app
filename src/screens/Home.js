@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, FONTSIZE } from "../constant";
 import { useFonts } from "expo-font";
 import { BudgetCard, IncomeSpendingBtn, SavingCard } from "../components";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [fontsLoaded] = useFonts({
     "NunitoSans-Bold": require("../assets/font/NunitoSans-Bold.ttf"),
     "NunitoSans-Regular": require("../assets/font/NunitoSans-Regular.ttf"),
@@ -95,15 +95,17 @@ const Home = () => {
           >
             Savings
           </Text>
-          <Text
-            style={{
-              fontFamily: "NunitoSans-Regular",
-              fontSize: FONTSIZE.small,
-              color: COLORS.primary,
-            }}
-          >
-            See All
-          </Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Goals")}>
+            <Text
+              style={{
+                fontFamily: "NunitoSans-Regular",
+                fontSize: FONTSIZE.small,
+                color: COLORS.primary,
+              }}
+            >
+              See All
+            </Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.sectoionCardContainer}>
           {savingCardDetails.map((item) => (

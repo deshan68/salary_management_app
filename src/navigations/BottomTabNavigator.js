@@ -1,13 +1,14 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { Home, Savings } from "../screens";
+import { Goal, Home, Savings } from "../screens";
 import { COLORS, IMAGES } from "../constant";
 import Icon from "react-native-vector-icons/Ionicons";
 import { SafeAreaView } from "react-native";
 import { Image } from "react-native";
 import { ImageBackground } from "react-native";
 import { GoalsHeader, HomeHeader } from "../components";
+import Goals from "../screens/Goal";
 
 const Tab = createBottomTabNavigator();
 
@@ -39,7 +40,7 @@ const BottomTabNavigator = () => {
       />
       <Tab.Screen
         name="Goals"
-        component={Savings}
+        component={Goals}
         options={{
           header: () => {
             return <GoalsHeader />;
