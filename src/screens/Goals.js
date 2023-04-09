@@ -7,28 +7,32 @@ const Goals = ({ navigation }) => {
   const savingCardDetails = [
     {
       goalName: "Car",
-      totalAmmount: 3000,
-      currntAmmount: 1000,
-      Completed: "40%",
+      totalAmmount: 100,
+      currntAmmount: 20,
+      Completed: 20,
     },
     {
       goalName: "House",
-      totalAmmount: 3000,
-      currntAmmount: 1000,
-      Completed: "60%",
+      totalAmmount: 100,
+      currntAmmount: 30,
+      Completed: 30,
     },
     {
       goalName: "Iphone",
-      totalAmmount: 3000,
-      currntAmmount: 1000,
-      Completed: "10%",
+      totalAmmount: 100,
+      currntAmmount: 70,
+      Completed: 70,
     },
   ];
   return (
     <View style={styles.container}>
       <View>
         {savingCardDetails.map((item) => (
-          <BigGoalCard key={item.goalName} item={item} />
+          <BigGoalCard
+            key={item.goalName}
+            item={item}
+            navigation={navigation}
+          />
         ))}
       </View>
       <TouchableOpacity

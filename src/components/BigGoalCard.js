@@ -1,10 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, FONTSIZE } from "../constant";
 
-const BigGoalCard = ({ item }) => {
+const BigGoalCard = ({ item, navigation }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() =>
+        navigation.navigate("AGoal", {
+          goalTitle: item.goalName,
+          completedPrecentage: item.Completed,
+          totalAmmount: item.totalAmmount,
+          currntAmmount: item.currntAmmount,
+        })
+      }
+    >
       <Text
         style={{
           fontFamily: "NunitoSans-Bold",
@@ -27,10 +37,10 @@ const BigGoalCard = ({ item }) => {
       </Text>
       <View style={styles.GoalCompletionIndicatorContainer}>
         <View
-          style={[styles.CompletedIndicator, { width: item.Completed }]}
+          style={[styles.CompletedIndicator, { width: `${item.Completed}%` }]}
         ></View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

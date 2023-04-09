@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { CreateGoal, Goal } from "../screens";
+import { AGoal, CreateGoal, Goal } from "../screens";
 import { GoalsHeader, HomeHeader } from "../components";
 import { COLORS, FONTSIZE } from "../constant";
-
+import { useRoute } from "@react-navigation/native";
 const GoalsNavigator = () => {
   const Stack = createNativeStackNavigator();
   return (
@@ -29,7 +29,6 @@ const GoalsNavigator = () => {
         name="CreateGoal"
         component={CreateGoal}
         options={{
-          headerShown: true,
           headerStyle: { backgroundColor: COLORS.primary },
           headerTintColor: COLORS.white,
           headerBackTitleVisible: false,
@@ -40,6 +39,19 @@ const GoalsNavigator = () => {
           },
           title: "Create goal",
         }}
+      />
+      <Stack.Screen
+        name="AGoal"
+        component={AGoal}
+        options={({ route }) => ({
+          title: route?.params?.goalTitle,
+          headerStyle: { backgroundColor: COLORS.primary },
+          headerTintColor: COLORS.white,
+          headerTitleStyle: {
+            fontFamily: "NunitoSans-Bold",
+            fontSize: FONTSIZE.meduim,
+          },
+        })}
       />
     </Stack.Navigator>
   );
