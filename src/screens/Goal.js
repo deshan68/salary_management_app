@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import BigGoalCard from "../components/BigGoalCard";
-import { COLORS } from "../constant";
+import { COLORS, FONTSIZE } from "../constant";
 
 const Goals = ({ navigation }) => {
   const savingCardDetails = [
@@ -29,6 +29,17 @@ const Goals = ({ navigation }) => {
       {savingCardDetails.map((item) => (
         <BigGoalCard key={item.goalName} item={item} />
       ))}
+      <TouchableOpacity style={styles.createNewGoalBtn}>
+        <Text
+          style={{
+            fontFamily: "NunitoSans-Bold",
+            color: COLORS.white,
+            fontSize: FONTSIZE.meduim,
+          }}
+        >
+          Create new goal
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -41,5 +52,13 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 10,
     backgroundColor: COLORS.gray,
+  },
+  createNewGoalBtn: {
+    backgroundColor: COLORS.primary,
+    height: 50,
+    borderRadius: 20,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 10,
   },
 });
