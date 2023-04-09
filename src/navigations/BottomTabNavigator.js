@@ -8,7 +8,8 @@ import { SafeAreaView } from "react-native";
 import { Image } from "react-native";
 import { ImageBackground } from "react-native";
 import { GoalsHeader, HomeHeader } from "../components";
-import Goals from "../screens/Goal";
+import Goals from "../screens/Goals";
+import GoalsNavigator from "./GoalsNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +23,7 @@ const BottomTabNavigator = () => {
 
           if (route.name === "Home") {
             iconName = focused ? "ios-home-sharp" : "ios-home-outline";
-          } else if (route.name === "Goals") {
+          } else if (route.name === "GoalsNavigator") {
             iconName = focused ? "ios-golf-sharp" : "ios-golf-outline";
           }
           return <Icon name={iconName} size={size} color={color} />;
@@ -38,13 +39,16 @@ const BottomTabNavigator = () => {
           },
         }}
       />
+
       <Tab.Screen
-        name="Goals"
-        component={Goals}
+        name="GoalsNavigator"
+        component={GoalsNavigator}
         options={{
           header: () => {
             return <GoalsHeader />;
           },
+          title: "Goals",
+          headerShown: false,
         }}
       />
     </Tab.Navigator>

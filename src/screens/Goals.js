@@ -26,10 +26,15 @@ const Goals = ({ navigation }) => {
   ];
   return (
     <View style={styles.container}>
-      {savingCardDetails.map((item) => (
-        <BigGoalCard key={item.goalName} item={item} />
-      ))}
-      <TouchableOpacity style={styles.createNewGoalBtn}>
+      <View>
+        {savingCardDetails.map((item) => (
+          <BigGoalCard key={item.goalName} item={item} />
+        ))}
+      </View>
+      <TouchableOpacity
+        style={styles.createNewGoalBtn}
+        onPress={() => navigation.navigate("CreateGoal")}
+      >
         <Text
           style={{
             fontFamily: "NunitoSans-Bold",
@@ -52,6 +57,7 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingHorizontal: 10,
     backgroundColor: COLORS.gray,
+    justifyContent: "space-between",
   },
   createNewGoalBtn: {
     backgroundColor: COLORS.primary,
@@ -59,6 +65,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 10,
+    marginBottom: 10,
   },
 });
