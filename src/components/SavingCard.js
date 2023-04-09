@@ -3,7 +3,8 @@ import React from "react";
 import Icon from "react-native-vector-icons/AntDesign";
 import { COLORS, FONTSIZE } from "../constant";
 
-const SavingCard = () => {
+const SavingCard = ({ item }) => {
+  console.log(item.Completed);
   return (
     <View style={styles.Container}>
       <View style={styles.goalNameWithIcon}>
@@ -14,7 +15,7 @@ const SavingCard = () => {
             color: COLORS.fontGray,
           }}
         >
-          Car
+          {item.goalName}
         </Text>
         <Icon name="right" size={15} />
       </View>
@@ -25,10 +26,12 @@ const SavingCard = () => {
           color: COLORS.black,
         }}
       >
-        RS: 3000.00
+        RS: {item.currntAmmount}.00
       </Text>
       <View style={styles.GoalCompletionIndicatorContainer}>
-        <View style={styles.CompletedIndicator}></View>
+        <View
+          style={[styles.CompletedIndicator, { width: item.Completed }]}
+        ></View>
       </View>
     </View>
   );
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
   },
   CompletedIndicator: {
     backgroundColor: COLORS.primary,
-    width: "30%",
+
     height: 7,
     borderRadius: 7,
   },

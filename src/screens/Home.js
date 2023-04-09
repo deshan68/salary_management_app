@@ -14,6 +14,26 @@ const Home = () => {
   if (!fontsLoaded) {
     return null;
   }
+  const savingCardDetails = [
+    {
+      goalName: "Car",
+      totalAmmount: 3000,
+      currntAmmount: 1000,
+      Completed: "40%",
+    },
+    {
+      goalName: "House",
+      totalAmmount: 3000,
+      currntAmmount: 1000,
+      Completed: "60%",
+    },
+    {
+      goalName: "Iphone",
+      totalAmmount: 3000,
+      currntAmmount: 1000,
+      Completed: "10%",
+    },
+  ];
   return (
     <View style={styles.container}>
       <View style={styles.budgetSection}>
@@ -86,10 +106,9 @@ const Home = () => {
           </Text>
         </View>
         <View style={styles.sectoionCardContainer}>
-          <SavingCard />
-          <SavingCard />
-          <SavingCard />
-          <SavingCard />
+          {savingCardDetails.map((item) => (
+            <SavingCard key={item.goalName} item={item} />
+          ))}
         </View>
       </View>
     </View>
