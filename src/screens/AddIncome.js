@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { InputBox } from "../components";
+import { InputBox, LargButton } from "../components";
 
 const AddIncome = () => {
   return (
     <View style={{ paddingHorizontal: 10 }}>
       <InputBox title={"Amount"} placeholder={"Enter amount"} />
+      <LargButton buttonTitile={"Add"} />
     </View>
   );
 };

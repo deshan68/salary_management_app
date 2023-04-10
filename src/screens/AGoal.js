@@ -2,6 +2,7 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
 import { COLORS, FONTSIZE } from "../constant";
+import { InputBox, LargButton } from "../components";
 
 const AGoal = () => {
   const route = useRoute();
@@ -72,6 +73,8 @@ const AGoal = () => {
           </Text>
         </View>
       </View>
+      <InputBox placeholder={"Add amount"} title={""} />
+      <LargButton buttonTitile={"Save"} />
     </View>
   );
 };

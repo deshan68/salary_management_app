@@ -5,3 +5,4 @@ export { default as IncomeSpendingBtn } from "../components/IncomeSpendingBtn";
 export { default as SavingCard } from "../components/SavingCard";
 export { default as SavingCBigGoalCardard } from "../components/BigGoalCard";
 export { default as InputBox } from "../components/InputBox";
+export { default as LargButton } from "../components/LargButton";

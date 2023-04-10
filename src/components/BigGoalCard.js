@@ -33,7 +33,7 @@ const BigGoalCard = ({ item, navigation }) => {
           alignSelf: "flex-end",
         }}
       >
-        {item.Completed}
+        {item.Completed}%
       </Text>
       <View style={styles.GoalCompletionIndicatorContainer}>
         <View

@@ -92,11 +92,7 @@ const Home = ({ navigation }) => {
             color={COLORS.green}
             cardName="Incomes"
           />
-          <BudgetCard
-            icoName="download"
-            color={COLORS.red}
-            cardName="Spending"
-          />
+          <BudgetCard icoName="upload" color={COLORS.red} cardName="Spending" />
         </View>
       </View>
       {/* -------- Saving section------- */}
