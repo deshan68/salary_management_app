@@ -91,9 +91,9 @@ const styles = StyleSheet.create({
   },
   savingCard: {
     height: 113,
-    width: 190,
+    width: "49%",
     backgroundColor: COLORS.green,
     borderRadius: 20,
-    padding: 20,
+    padding: 15,
   },
 });
