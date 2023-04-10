@@ -58,8 +58,18 @@ const Home = ({ navigation }) => {
           Rs: 250000.00
         </Text>
         <View style={styles.incomeSpendingBtnContainer}>
-          <IncomeSpendingBtn btnTitle={"Add Income"} btnIcon={"download"} />
-          <IncomeSpendingBtn btnTitle={"Add Spending"} btnIcon={"upload"} />
+          <IncomeSpendingBtn
+            btnTitle={"Add Income"}
+            btnIcon={"download"}
+            navigation={navigation}
+            navigateScreen={"AddIncome"}
+          />
+          <IncomeSpendingBtn
+            btnTitle={"Add Spending"}
+            btnIcon={"upload"}
+            navigation={navigation}
+            navigateScreen={"AddSpending"}
+          />
         </View>
         <Text
           style={{

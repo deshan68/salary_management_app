@@ -1,11 +1,21 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, FONTSIZE } from "../constant";
 import Icon from "react-native-vector-icons/AntDesign";
 
-const IncomeSpendingBtn = ({ btnTitle, btnIcon }) => {
+const IncomeSpendingBtn = ({
+  btnTitle,
+  btnIcon,
+  navigation,
+  navigateScreen,
+}) => {
   return (
-    <View style={styles.btnContainer}>
+    <TouchableOpacity
+      style={styles.btnContainer}
+      onPress={() => {
+        navigation.navigate(navigateScreen);
+      }}
+    >
       <Icon name={btnIcon} size={20} color={COLORS.white} />
       <Text
         style={{
@@ -16,7 +26,7 @@ const IncomeSpendingBtn = ({ btnTitle, btnIcon }) => {
       >
         {btnTitle}
       </Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 

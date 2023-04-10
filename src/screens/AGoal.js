@@ -59,7 +59,7 @@ const AGoal = () => {
               marginBottom: 3,
             }}
           >
-            RS: {100 - route?.params?.currntAmmount}.00
+            RS: {route?.params?.totalAmmount - route?.params?.currntAmmount}.00
           </Text>
           <Text
             style={{

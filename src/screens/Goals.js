@@ -7,8 +7,8 @@ const Goals = ({ navigation }) => {
   const savingCardDetails = [
     {
       goalName: "Car",
-      totalAmmount: 100,
-      currntAmmount: 20,
+      totalAmmount: 1000,
+      currntAmmount: 200,
       Completed: 20,
     },
     {
@@ -19,8 +19,8 @@ const Goals = ({ navigation }) => {
     },
     {
       goalName: "Iphone",
-      totalAmmount: 100,
-      currntAmmount: 70,
+      totalAmmount: 1000,
+      currntAmmount: 700,
       Completed: 70,
     },
   ];

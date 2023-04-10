@@ -4,21 +4,15 @@ import { useFonts } from "expo-font";
 import { COLORS, ICONS } from "./src/constant";
 import BottomTabNavigator from "./src/navigations/BottomTabNavigator";
 import { NavigationContainer } from "@react-navigation/native";
+import HomeNavigator from "./src/navigations/HomeNavigator";
 
 export default function App() {
   return (
     <NavigationContainer>
-      <BottomTabNavigator />
+      {/* <BottomTabNavigator /> */}
+      <HomeNavigator />
       <StatusBar barStyle={"dark-content"} />
     </NavigationContainer>
-    // <View style={styles.container}>
-    //   {/* <Text>Open up App.js to start working on your app!</Text>
-    //   <Text style={{ fontFamily: "NunitoSans-Regular", fontSize: 30 }}>
-    //     NunitoSans-Bold
-    //   </Text>
-    //   {ICONS.delete}
-    //   <StatusBar style="auto" /> */}
-    // </View>
   );
 }
 
