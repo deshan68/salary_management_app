@@ -51,7 +51,7 @@ export default BudgetCard;
 const styles = StyleSheet.create({
   budgetCard: {
     height: 125,
-    width: 180,
+    width: "49%",
     borderRadius: 20,
     backgroundColor: COLORS.white,
     padding: 15,

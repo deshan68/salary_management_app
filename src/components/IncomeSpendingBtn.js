@@ -34,7 +34,7 @@ export default IncomeSpendingBtn;
 
 const styles = StyleSheet.create({
   btnContainer: {
-    width: 180,
+    width: "49%",
     height: 50,
     borderWidth: 0.5,
     borderColor: COLORS.white,

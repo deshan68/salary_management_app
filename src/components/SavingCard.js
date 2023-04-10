@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   Container: {
     padding: 20,
     backgroundColor: COLORS.white,
-    width: 194,
+    width: "49%",
     borderRadius: 20,
     gap: 3,
     marginBottom: 5,

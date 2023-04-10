@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { AGoal, CreateGoal, Goal } from "../screens";
+import { AGoal, CreateGoal, Goals } from "../screens";
 import { GoalsHeader, HomeHeader } from "../components";
 import { COLORS, FONTSIZE } from "../constant";
 import { useRoute } from "@react-navigation/native";
@@ -17,7 +17,7 @@ const GoalsNavigator = () => {
     >
       <Stack.Screen
         name="Goals"
-        component={Goal}
+        component={Goals}
         options={{
           header: () => {
             return <GoalsHeader />;

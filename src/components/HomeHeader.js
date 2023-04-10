@@ -22,10 +22,10 @@ const HomeHeader = () => {
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        margin: 10,
+        marginVertical: 15,
       }}
     >
-      <View style={{ gap: -5 }}>
+      <View style={{ gap: -5, marginLeft: 10 }}>
         <Text
           style={{
             fontFamily: "NunitoSans-Bold",
@@ -38,11 +38,13 @@ const HomeHeader = () => {
         <Text
           style={{
             fontFamily: "NunitoSans-Regular",
-            fontSize: FONTSIZE.small,
+            fontSize:
+              Platform.OS == "ios" ? FONTSIZE.small : FONTSIZE.verySmall,
+
             color: COLORS.fontGray,
           }}
         >
-          Here you can view overview of your budgjet{" "}
+          Here you can view overview of your budget
         </Text>
       </View>
       <View style={styles.ImageContainer}>
@@ -62,6 +64,7 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     width: 40,
     height: 40,
+    marginRight: 10,
   },
   image: {
     borderWidth: 2,

@@ -1,4 +1,10 @@
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React from "react";
 import { COLORS, FONTSIZE } from "../constant";
 import { useFonts } from "expo-font";
@@ -35,7 +41,7 @@ const Home = ({ navigation }) => {
     },
   ];
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.budgetSection}>
         <Text
           style={{
@@ -105,7 +111,9 @@ const Home = ({ navigation }) => {
           >
             Savings
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Goals")}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("GoalsNavigator")}
+          >
             <Text
               style={{
                 fontFamily: "NunitoSans-Regular",
@@ -123,7 +131,7 @@ const Home = ({ navigation }) => {
           ))}
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
